@@ -1,6 +1,8 @@
 import { AppProps } from "next/app";
 import { PropsWithChildren } from "react";
 
+import "@assets/main.css";
+
 const Noop = ({ children }: PropsWithChildren) => <>{children}</>;
 
 function MyApp({
