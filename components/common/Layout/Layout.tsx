@@ -1,12 +1,12 @@
 import { PropsWithChildren } from "react";
-import style from "./Layout.module.css";
+import s from "./Layout.module.css";
 
 const Layout = ({ children }: PropsWithChildren) => {
-  return (
-    <div className={style.root}>
-      <main className="fit">{children}</main>
-    </div>
-  );
+    return (
+        <div className={s.root}>
+            <main className="fit">{children}</main>
+        </div>
+    );
 };
 
 export default Layout;
