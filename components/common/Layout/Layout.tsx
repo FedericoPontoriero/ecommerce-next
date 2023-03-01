@@ -12,7 +12,7 @@ const Layout = ({ children }: PropsWithChildren) => {
     return (
         <div className={s.root}>
             <Navbar />
-            <Sidebar>
+            <Sidebar isOpen={ui.isSidebarOpen}>
                 <CartSideBar />
             </Sidebar>
             <main className="fit">{children}</main>

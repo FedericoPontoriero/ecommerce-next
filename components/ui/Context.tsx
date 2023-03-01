@@ -1,15 +1,18 @@
-import { createContext, FC, PropsWithChildren, useContext } from "react";
+import { createContext, PropsWithChildren, useContext, useState } from "react";
 
-const UIContext = createContext<{ [key: string]: string }>({
+const UIContext = createContext<{ [key: string]: any }>({
     uiState: "defaultState",
 });
 
 const UIProvider = ({ children }: PropsWithChildren) => {
-    return (
-        <UIContext.Provider value={{ uiState: "someState" }}>
-            {children}
-        </UIContext.Provider>
-    );
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+    const uiState = {
+        isSidebarOpen,
+        setIsSidebarOpen,
+    };
+
+    return <UIContext.Provider value={uiState}>{children}</UIContext.Provider>;
 };
 
 export const useUI = () => {
