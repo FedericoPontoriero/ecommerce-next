@@ -9,6 +9,15 @@ module.exports = {
       maxWidth: {
         "8xl": "1920px",
       },
+      animation: {
+        marquee: "marquee 25s linear infinite",
+      },
+      keyframes: {
+        marquee: {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(-100%)" },
+        },
+      },
       colors: {
         primary: "var(--primary)",
         "primary-2": "var(--primary-2)",
